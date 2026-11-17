@@ -1,0 +1,18 @@
+# Телефония и Halium/libhybris (большинство отсутствует в официальных ALARM репо)
+# Устанавливать из AUR/внешних репозиториев (droidian/собственная сборка) по мере готовности адаптации.
+# libhybris
+# android-headers
+# ofono
+# ofono-ril-binder-plugin
+# pulseaudio-module-droid
+# audiosystem-passthrough
+# qt5-qpa-hwcomposer-plugin (или Qt6-аналог при наличии)
+# lxc-android-config (адаптация устройства)
+# usb-moded / hybris-usb
+# nfcd / nfcd-binder-plugin
+# sensorfw-qt5 / hadess-sensorfw-proxy
+calls
+chatty
+gnome-contacts
+vvmplayer
+ofonoctl

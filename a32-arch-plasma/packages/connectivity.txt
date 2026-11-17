@@ -1,0 +1,12 @@
+# Сеть, Bluetooth, звук
+networkmanager
+modemmanager
+mobile-broadband-provider-info
+bluez
+bluez-utils
+pipewire
+pipewire-pulse
+pipewire-alsa
+wireplumber
+alsa-utils
+rfkill

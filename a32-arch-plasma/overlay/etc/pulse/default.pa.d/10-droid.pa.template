@@ -1,0 +1,11 @@
+# Шаблон PulseAudio для Halium (требует pulseaudio-module-droid, audiosystem-passthrough).
+# Скопировать содержимое в /etc/pulse/default.pa или подключить через default.pa.d при поддержке сборки.
+#
+# .ifexists module-droid-card.so
+# load-module module-droid-card rate=48000 voice_virtual_stream=true
+# .endif
+# .ifexists module-droid-hidl.so
+# load-module module-droid-hidl
+# .endif
+#
+# Для звонков может потребоваться callaudiod и специфичная конфигурация устройств.

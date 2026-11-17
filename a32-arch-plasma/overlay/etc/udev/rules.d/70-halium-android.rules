@@ -1,0 +1,11 @@
+# Доступ к Android binder/ashmem и графическим узлам (Halium/LXC)
+# Уточнить владельцев/группы под фактическую адаптацию устройства.
+KERNEL=="binder*|ashmem*|vndbinder*|hwbinder*", MODE="0666"
+KERNEL=="hwc*", MODE="0660", GROUP="video"
+SUBSYSTEM=="graphics", MODE="0660", GROUP="video"
+SUBSYSTEM=="drm", MODE="0660", GROUP="video"
+KERNEL=="card[0-9]*", MODE="0660", GROUP="video"
+SUBSYSTEM=="input", MODE="0660", GROUP="input"
+
+# Проброс событий тачскрина/кнопок (пример; device-specific правила добавить по /sys)
+ACTION=="add", SUBSYSTEM=="input", ENV{ID_INPUT_TOUCHSCREEN}=="1", MODE="0660", GROUP="input"

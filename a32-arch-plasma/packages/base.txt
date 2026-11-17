@@ -1,0 +1,25 @@
+# Базовая система (ALARM aarch64)
+base
+mkinitcpio
+linux-firmware
+archlinuxarm-keyring
+ca-certificates
+openssh
+sudo
+nano
+vim
+less
+which
+iproute2
+iputils
+dnsutils
+iwd
+wpa_supplicant
+lxc
+android-tools
+usbutils
+ethtool
+htop
+bash-completion
+man-db
+man-pages

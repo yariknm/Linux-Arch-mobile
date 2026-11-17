@@ -1,0 +1,21 @@
+#!/bin/bash
+# One-time first boot helper (запускать вручную от root после первого старта)
+set -euo pipefail
+MARKER=/var/lib/arch-a32-firstboot.done
+[[ -f "$MARKER" ]] && { echo "Already completed"; exit 0; }
+
+echo "[*] Обновление базы ключей и локалей"
+pacman-key --init 2>/dev/null || true
+pacman-key --populate archlinuxarm 2>/dev/null || true
+locale-gen || true
+
+echo "[*] Проверка сессии Plasma Mobile"
+ls /usr/share/wayland-sessions/ || true
+systemctl status sddm --no-pager -l 2>&1 | head -n 20 || true
+
+echo "[*] Проверка сервисов"
+systemctl is-enabled NetworkManager bluetooth sddm pipewire 2>/dev/null || true
+
+mkdir -p "$(dirname "$MARKER")"
+date -Iseconds > "$MARKER"
+echo "[+] Done. Перезагрузите при необходимости: reboot"

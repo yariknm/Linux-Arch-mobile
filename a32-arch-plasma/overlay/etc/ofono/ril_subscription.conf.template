@@ -1,0 +1,11 @@
+# Шаблон для ofono-ril-binder (Halium). Скопировать в ril_subscription.conf и адаптировать.
+# [ril_0]
+# transport=binder:name=slot1
+# name=slot1
+#
+# [ril_1]
+# transport=binder:name=slot2
+# name=slot2
+#
+# Для MTK имена binder-сервисов и число слотов — device/vendor-specific.
+# Проверка: ofonoctl list-modems; journalctl -u ofono

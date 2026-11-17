@@ -1,0 +1,12 @@
+# /etc/systemd/system/lxc@android.service.d/override.conf (шаблон)
+# Реальный юнит/контейнер предоставляется device-адаптацией Halium (lxc-android-config).
+# Убедитесь, что пакет/конфигурация lxc@android установлены.
+#
+# [Service]
+# ExecStartPre=/usr/lib/halium/android-mounts
+# TimeoutStartSec=120
+#
+# После установки адаптации:
+#   systemctl enable lxc@android.service
+#
+# Проверка: machinectl list; lxc-info -n android; logcat (в контейнере/через android-tools)
